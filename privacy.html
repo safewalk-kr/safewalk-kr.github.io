@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 — SafeWalkNav</title>
+<meta name="description" content="SafeWalkNav 개인정보처리방침입니다. 수집하는 정보, 이용 목적, 보유 기간, 제3자 제공 및 이용자의 권리를 안내합니다.">
+<meta name="robots" content="index, follow">
+
+<style>
+  :root {
+    --bg:      #F4F5F7;
+    --surface: #FFFFFF;
+    --ink:     #14171C;
+    --muted:   #565D68;
+    --line:    #D8DBE0;
+    --accent:  #1749B3;
+    --signal:  #F0A202;
+
+    --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+            "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+
+  .wrap {
+    max-width: 43rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    z-index: 10;
+  }
+  .skip:focus { left: 0; }
+
+  a { color: var(--accent); }
+  a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- 헤더 ---------- */
+  header { padding: 3rem 0 2rem; }
+
+  .back {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+  }
+
+  .meta {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .crosswalk {
+    height: 0.75rem;
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--signal) 0 1rem,
+      transparent 1rem 2rem
+    );
+    margin: 2rem 0 3rem;
+  }
+
+  /* ---------- 요약 ---------- */
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+  .summary h2 {
+    font-size: 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .summary ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .summary li { margin-bottom: 0.5rem; }
+  .summary li:last-child { margin-bottom: 0; }
+
+  /* ---------- 본문 ---------- */
+  section { margin-bottom: 3rem; }
+
+  h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 2rem 0 0.5rem;
+  }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+  li { margin-bottom: 0.375rem; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+  caption {
+    text-align: left;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    padding-bottom: 0.5rem;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--surface);
+    font-weight: 700;
+  }
+
+  /* ---------- 푸터 ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0 4rem;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  .footer-links {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+  }
+  .footer-links li { margin: 0; }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">← SafeWalkNav 홈으로</a>
+    <h1>개인정보처리방침</h1>
+    <p class="meta">시행일: 2026년 8월 15일</p>
+  </div>
+</header>
+
+<div class="crosswalk" aria-hidden="true"></div>
+
+<main id="main">
+  <div class="wrap">
+
+    <!-- ========== 요약 ========== -->
+    <div class="summary">
+      <h2>먼저, 핵심만 요약합니다</h2>
+      <ul>
+        <li>SafeWalkNav는 <strong>회원가입이 없고, 이름·전화번호·이메일 등 신원 정보를 수집하지 않습니다.</strong></li>
+        <li>길 안내를 위해 <strong>위치정보</strong>를, 목적지 입력을 위해 <strong>음성</strong>을, 신호등 인식을 위해 <strong>카메라 영상</strong>을 사용합니다.</li>
+        <li>위치는 경로 계산을 위해 SK텔레콤 TMap 서버로, 음성은 문자 변환을 위해 Apple 서버로 전송됩니다.</li>
+        <li><strong>카메라 영상은 기기 밖으로 나가지 않으며, 저장하지도 않습니다.</strong> 광고와 사용 행태 분석 도구도 사용하지 않습니다.</li>
+        <li>모든 권한은 거부할 수 있으며, 언제든 기기 설정에서 다시 끌 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <!-- ========== 1 ========== -->
+    <section>
+      <h2>1. 총칙</h2>
+      <p><strong>SafeWalk</strong>(이하 “운영자”)은 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 및 「위치정보의 보호 및 이용 등에 관한 법률」 등 관련 법령을 준수합니다.</p>
+      <p>본 방침은 모바일 애플리케이션 <strong>SafeWalkNav</strong>(이하 “앱”)에 적용됩니다.</p>
+    </section>
+
+    <!-- ========== 2 ========== -->
+    <section>
+      <h2>2. 수집하는 정보와 이용 목적</h2>
+      <p>앱은 <strong>회원가입 절차가 없으며</strong>, 이름·생년월일·연락처·이메일 등 이용자를 식별할 수 있는 정보를 수집하지 않습니다. 서비스 제공에 필요한 최소한의 정보만을 아래와 같이 처리합니다.</p>
+
+      <table>
+        <caption>수집 항목, 이용 목적, 처리 방식</caption>
+        <thead>
+          <tr>
+            <th scope="col">항목</th>
+            <th scope="col">이용 목적</th>
+            <th scope="col">처리 방식</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">위치정보<br>(정확한 위치)</th>
+            <td>현재 위치 확인, 보행 경로 탐색, 경로 이탈 안내</td>
+            <td>경로 계산을 위해 외부 서버로 전송</td>
+          </tr>
+          <tr>
+            <th scope="row">음성</th>
+            <td>음성으로 목적지를 입력받아 문자로 변환</td>
+            <td>변환을 위해 Apple 서버로 전송</td>
+          </tr>
+          <tr>
+            <th scope="row">카메라 영상</th>
+            <td>보행 신호등 인식</td>
+            <td>기기 내부에서만 처리하며, 저장하거나 외부로 전송하지 않음</td>
+          </tr>
+          <tr>
+            <th scope="row">보행 기록</th>
+            <td>오류 원인 분석 및 안내 품질 개선</td>
+            <td>기기 내부에만 저장하며, 외부로 전송하지 않음</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>수집 방법</h3>
+      <p>모든 정보는 이용자가 앱을 사용하는 과정에서 기기의 센서·마이크·카메라를 통해 수집되며, <strong>이용자가 해당 권한을 허용한 경우에만</strong> 수집됩니다.</p>
+    </section>
+
+    <!-- ========== 3 ========== -->
+    <section>
+      <h2>3. 보유 및 이용 기간</h2>
+      <ul>
+        <li><strong>위치정보</strong>: 경로 안내에 실시간으로 사용되며, 안내 종료 후 별도로 보관하지 않습니다.</li>
+        <li><strong>음성</strong>: 문자 변환 직후 앱에서 삭제되며, 별도로 저장하지 않습니다. Apple 서버에서의 처리 및 보관은 Apple의 정책을 따릅니다.</li>
+        <li><strong>카메라 영상</strong>: 신호등을 인식하는 즉시 처리되며, 저장하지 않습니다. 촬영된 화면은 기기 밖으로 나가지 않습니다.</li>
+        <li><strong>보행 기록</strong>: 이용자의 기기 내부에만 저장되며 외부로 전송되지 않습니다. 이용자가 직접 삭제할 수 있습니다.</li>
+      </ul>
+      <p>이용자가 앱을 삭제하면 기기에 저장된 모든 기록이 함께 삭제됩니다.</p>
+    </section>
+
+    <!-- ========== 4 ========== -->
+    <section>
+      <h2>4. 제3자 제공 및 처리 위탁</h2>
+      <p>운영자는 이용자의 정보를 판매하거나 광고 목적으로 제공하지 않습니다. 다만 서비스 제공에 반드시 필요한 범위에서 아래와 같이 처리를 위탁합니다.</p>
+
+      <table>
+        <caption>위탁받는 자, 위탁 업무, 제공 항목</caption>
+        <thead>
+          <tr>
+            <th scope="col">위탁받는 자</th>
+            <th scope="col">위탁 업무</th>
+            <th scope="col">제공 항목</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">SK텔레콤 (TMap API)</th>
+            <td>보행자 경로 탐색</td>
+            <td>출발지 및 목적지 좌표</td>
+          </tr>
+          <tr>
+            <th scope="row">Apple Inc.</th>
+            <td>음성의 문자 변환</td>
+            <td>이용자가 말한 음성</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Apple의 음성 인식은 이용자의 기기에서 Apple 서버로 전송되어 처리됩니다. 해당 처리에 관한 사항은 Apple의 개인정보 처리방침을 따릅니다.</p>
+      <p>법령에 근거한 수사기관의 적법한 요청이 있는 경우를 제외하고, 위 외의 제3자에게 정보를 제공하지 않습니다.</p>
+    </section>
+
+    <!-- ========== 5 ========== -->
+    <section>
+      <h2>5. 이용자의 권리와 행사 방법</h2>
+      <p>이용자는 다음 권리를 언제든지 행사할 수 있습니다.</p>
+      <ul>
+        <li><strong>권한 거부</strong>: 위치·마이크·카메라 권한을 허용하지 않아도 앱을 실행할 수 있습니다. 다만 해당 기능은 이용할 수 없습니다.</li>
+        <li><strong>권한 철회</strong>: 기기의 설정 앱에서 언제든 권한을 다시 끌 수 있습니다.</li>
+        <li><strong>기록 삭제</strong>: 기기에 저장된 보행 기록은 이용자가 직접 삭제할 수 있으며, 앱 삭제 시 함께 삭제됩니다.</li>
+        <li><strong>열람·정정·삭제 요구</strong>: 아래 연락처로 요청하실 수 있습니다.</li>
+      </ul>
+      <p>권한을 거부하거나 철회하더라도 그로 인한 불이익은 없습니다.</p>
+    </section>
+
+    <!-- ========== 6 ========== -->
+    <section>
+      <h2>6. 파기 절차 및 방법</h2>
+      <p>처리 목적이 달성된 정보는 지체 없이 파기합니다. 전자적 파일 형태의 정보는 복구할 수 없는 방법으로 삭제합니다.</p>
+    </section>
+
+    <!-- ========== 7 ========== -->
+    <section>
+      <h2>7. 안전성 확보 조치</h2>
+      <ul>
+        <li>외부 서버와의 모든 통신은 HTTPS로 암호화하여 전송합니다.</li>
+        <li>서비스 제공에 필요한 최소한의 정보만을 처리합니다.</li>
+        <li>이용자를 식별할 수 있는 계정 정보를 수집하지 않습니다.</li>
+      </ul>
+    </section>
+
+    <!-- ========== 8 ========== -->
+    <section>
+      <h2>8. 만 14세 미만 아동의 개인정보</h2>
+      <p>앱은 만 14세 미만 아동을 이용 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보 및 개인위치정보를 의도적으로 수집하지 않습니다.</p>
+      <p>만 14세 미만 아동의 정보가 수집된 사실을 인지한 경우, 운영자는 지체 없이 해당 정보를 파기합니다. 관련 문의는 아래 연락처로 주시기 바랍니다.</p>
+    </section>
+
+    <!-- ========== 9 ========== -->
+    <section>
+      <h2>9. 자동 수집 장치</h2>
+      <p>앱은 광고 식별자를 수집하지 않으며, 이용자의 사용 행태를 분석하는 별도의 분석 도구를 사용하지 않습니다. 앱 내에 광고를 게재하지 않습니다.</p>
+    </section>
+
+    <!-- ========== 10 ========== -->
+    <section>
+      <h2>10. 개인정보 보호책임자</h2>
+      <p>개인정보 처리에 관한 문의, 불만 처리, 피해 구제는 아래로 연락해 주시기 바랍니다.</p>
+      <ul>
+        <li>성명: 이도윤</li>
+        <li>이메일: <a href="mailto:1114tndud@gmail.com">1114tndud@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <!-- ========== 11 ========== -->
+    <section>
+      <h2>11. 방침의 변경</h2>
+      <p>본 방침의 내용이 변경되는 경우 변경 사항과 시행일을 이 페이지에 게시합니다. 이용자에게 중요한 영향을 미치는 변경은 시행일로부터 최소 7일 전에 안내합니다.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="footer-links">
+      <li><a href="index.html">SafeWalkNav 홈</a></li>
+      <li><a href="mailto:1114tndud@gmail.com">이메일 문의</a></li>
+    </ul>
+    <p>SafeWalkNav · 동국대학교 컴퓨터공학과 공개SW프로젝트</p>
+  </div>
+</footer>
+
+</body>
+</html>
