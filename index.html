@@ -45,6 +45,12 @@
   .lead { font-size: clamp(1.25rem, 4vw, 1.4375rem); line-height: 1.6; }
   .hero { padding: 4.5rem 0 4rem; background: radial-gradient(115% 85% at 12% 0%, var(--deep-lift) 0%, var(--deep) 62%); }
   .hero .lead { color: #E4E9F2; }
+  .topbar { display: flex; justify-content: flex-end; margin: -2rem 0 2rem; }
+  .lang-btn { font: inherit; font-size: 1rem; font-weight: 700; color: var(--on-deep); background: rgba(255,255,255,0.08); border: 1px solid var(--deep-line); border-radius: 999px; min-height: 2.75rem; padding: 0.4rem 1.2rem; cursor: pointer; }
+  .lang-btn:hover { background: rgba(255,255,255,0.16); }
+  .band--deep .lang-btn:focus-visible { outline-color: var(--signal); }
+  html[lang="en"] body { word-break: normal; }
+  @media (forced-colors: active) { .lang-btn { border: 1px solid CanvasText; } }
   .voice { margin: 3rem 0 0; padding: 0; list-style: none; }
   .voice li { border-left: 4px solid var(--signal); padding: 0.25rem 0 0.25rem 1.25rem; margin: 0 0 1.5rem; font-size: clamp(1.375rem, 5.5vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.4; }
   .voice li:last-child { margin-bottom: 0; }
@@ -131,17 +137,20 @@
 </head>
 
 <body>
-<a class="skip" href="#main">본문으로 건너뛰기</a>
+<a class="skip" href="#main" data-i18n="skip">본문으로 건너뛰기</a>
 
 <header class="hero band band--deep">
   <div class="wrap">
-    <p class="eyebrow">동국대학교 공개SW프로젝트</p>
+    <div class="topbar">
+      <button type="button" class="lang-btn" data-lang-toggle lang="en" hidden>English</button>
+    </div>
+    <p class="eyebrow" data-i18n="eyebrow">동국대학교 공개SW프로젝트</p>
     <h1>SafeWalk</h1>
-    <p class="lead">시각장애인이 스마트폰만으로 횡단보도를 건널 수 있도록 돕는 보행 안내 앱입니다.</p>
-    <p class="voice-label">앱이 사용자에게 들려주는 안내</p>
+    <p class="lead" data-i18n="lead">시각장애인이 스마트폰만으로 횡단보도를 건널 수 있도록 돕는 보행 안내 앱입니다.</p>
+    <p class="voice-label" data-i18n="voiceLabel">앱이 사용자에게 들려주는 안내</p>
     <ul class="voice">
-      <li class="fade">“목적지까지 1,471미터. 횡단보도 3개.”</li>
-      <li class="fade">“빨간불입니다. 정지하세요.”</li>
+      <li class="fade" data-i18n="voice1">“목적지까지 1,471미터. 횡단보도 3개.”</li>
+      <li class="fade" data-i18n="voice2">“빨간불입니다. 정지하세요.”</li>
     </ul>
   </div>
 </header>
@@ -153,26 +162,26 @@
   <div class="band">
     <section id="problem" data-reveal>
       <div class="wrap">
-        <h2>혼자 걷는다는 것</h2>
-        <p>국내 시각장애인은 약 24만 7천 명입니다. 이들이 혼자 길을 나설 때 마주하는 문제는 크게 두 가지입니다.</p>
+        <h2 data-i18n="problem.h">혼자 걷는다는 것</h2>
+        <p data-i18n="problem.p1">국내 시각장애인은 약 24만 7천 명입니다. 이들이 혼자 길을 나설 때 마주하는 문제는 크게 두 가지입니다.</p>
         <div class="stats">
           <div class="stat-block" data-reveal>
             <span class="stat">57%</span>
-            <p class="stat-label">혼자 보행하는 시각장애인이 주 1회 이상 길을 잃는 비율</p>
-            <p>길을 잃은 뒤 다시 경로로 돌아오는 일이 특히 어렵습니다.</p>
+            <p class="stat-label" data-i18n="stat1.label">혼자 보행하는 시각장애인이 주 1회 이상 길을 잃는 비율</p>
+            <p data-i18n="stat1.p">길을 잃은 뒤 다시 경로로 돌아오는 일이 특히 어렵습니다.</p>
           </div>
           <div class="stat-block" data-reveal>
             <span class="stat">45.3%</span>
-            <p class="stat-label">조사 대상 공공시설 중 음향신호기가 설치되지 않은 비율</p>
-            <p>음향신호기가 없는 횡단보도에서는 신호가 언제 바뀌는지 알 수 없는 상태로 길을 건너야 합니다.</p>
+            <p class="stat-label" data-i18n="stat2.label">조사 대상 공공시설 중 음향신호기가 설치되지 않은 비율</p>
+            <p data-i18n="stat2.p">음향신호기가 없는 횡단보도에서는 신호가 언제 바뀌는지 알 수 없는 상태로 길을 건너야 합니다.</p>
           </div>
         </div>
-        <p>기존 서비스들은 주변 환경 설명이나 길 안내 중 한쪽만 제공합니다. SafeWalk는 두 가지를 하나의 앱에서, 별도 장비 없이 이미 가지고 있는 스마트폰만으로 해결하려 합니다.</p>
-        <h3 class="sr-heading" id="sources-heading">출처</h3>
+        <p data-i18n="problem.p2">기존 서비스들은 주변 환경 설명이나 길 안내 중 한쪽만 제공합니다. SafeWalk는 두 가지를 하나의 앱에서, 별도 장비 없이 이미 가지고 있는 스마트폰만으로 해결하려 합니다.</p>
+        <h3 class="sr-heading" id="sources-heading" data-i18n="sources.h">출처</h3>
         <ul class="sources" aria-labelledby="sources-heading">
-          <li>등록장애인 현황 — 보건복지부, 「2024년 등록장애인 263만 1천 명, 전체 인구 대비 5.1%」(2025)</li>
-          <li>길 잃음 경험 — 장영건·차주현, 「시각장애인용 길안내 서비스 시스템에 대한 연구」, 『재활복지공학회논문지』 11(4), 2017</li>
-          <li>음향신호기 설치 실태 — 한국시각장애인연합회, 전국 시·도 및 시·군·구청 등 337개 대상시설 보행접근성 조사(2023)</li>
+          <li data-i18n="src1">등록장애인 현황 — 보건복지부, 「2024년 등록장애인 263만 1천 명, 전체 인구 대비 5.1%」(2025)</li>
+          <li data-i18n="src2">길 잃음 경험 — 장영건·차주현, 「시각장애인용 길안내 서비스 시스템에 대한 연구」, 『재활복지공학회논문지』 11(4), 2017</li>
+          <li data-i18n="src3">음향신호기 설치 실태 — 한국시각장애인연합회, 전국 시·도 및 시·군·구청 등 337개 대상시설 보행접근성 조사(2023)</li>
         </ul>
       </div>
     </section>
@@ -181,11 +190,11 @@
   <div class="band band--tint">
     <section id="solution">
       <div class="wrap">
-        <h2 data-reveal>무엇을 하는 앱인가요</h2>
+        <h2 data-reveal data-i18n="sol.h">무엇을 하는 앱인가요</h2>
         <ul class="features">
-          <li data-reveal><h3>음성으로 목적지 입력</h3><p>화면을 보지 않고 말로 목적지를 정합니다.</p></li>
-          <li data-reveal><h3>보행 경로 음성 안내</h3><p>가야 할 방향과 남은 거리를 알려주고, 경로에서 벗어나면 바로 바로잡아 줍니다.</p></li>
-          <li data-reveal><h3>신호등 인식</h3><p>카메라로 보행 신호등을 찾아 색을 안내하고, 어느 방향으로 카메라를 들어야 하는지도 함께 알려줍니다.</p></li>
+          <li data-reveal><h3 data-i18n="f1.h">음성으로 목적지 입력</h3><p data-i18n="f1.p">화면을 보지 않고 말로 목적지를 정합니다.</p></li>
+          <li data-reveal><h3 data-i18n="f2.h">보행 경로 음성 안내</h3><p data-i18n="f2.p">가야 할 방향과 남은 거리를 알려주고, 경로에서 벗어나면 바로 바로잡아 줍니다.</p></li>
+          <li data-reveal><h3 data-i18n="f3.h">신호등 인식</h3><p data-i18n="f3.p">카메라로 보행 신호등을 찾아 색을 안내하고, 어느 방향으로 카메라를 들어야 하는지도 함께 알려줍니다.</p></li>
         </ul>
       </div>
     </section>
@@ -195,18 +204,18 @@
     <section id="screens" data-reveal>
       <div class="wrap">
         <div class="shots-head">
-          <h2>앱 화면 미리보기</h2>
-          <button type="button" class="shots-toggle" data-shots-toggle aria-pressed="false">일시정지</button>
+          <h2 data-i18n="shots.h">앱 화면 미리보기</h2>
+          <button type="button" class="shots-toggle" data-shots-toggle aria-pressed="false" data-i18n="toggle.pause">일시정지</button>
         </div>
-        <p>목적지를 말하면 경로를 안내하고, 횡단보도에서는 신호등 색을 읽어 줍니다.</p>
+        <p data-i18n="shots.p">목적지를 말하면 경로를 안내하고, 횡단보도에서는 신호등 색을 읽어 줍니다.</p>
       </div>
       <div class="marquee">
         <div class="marquee__track" data-shots-track>
-          <figure><img src="images/01_voice.png" alt="‘목적지를 말하려면 화면을 두 번 누르세요’ 안내가 표시된 시작 화면" loading="lazy"><figcaption>① 목적지를 말로 입력</figcaption></figure>
-          <figure><img src="images/02_listening.png" alt="‘듣고 있어요… 태극당’ 음성 인식 중 화면" loading="lazy"><figcaption>② 음성 인식</figcaption></figure>
-          <figure><img src="images/03_select.png" alt="태극당 308미터, 태극당 장충본점 313미터 등 후보 장소를 고르는 화면" loading="lazy"><figcaption>③ 장소 선택</figcaption></figure>
-          <figure><img src="images/04_route.jpg" alt="‘목적지까지 약 300미터, 다음 횡단보도까지 약 100미터’ 지도와 경로 안내 화면" loading="lazy"><figcaption>④ 경로·거리 안내</figcaption></figure>
-          <figure><img src="images/05_signal.jpg" alt="카메라로 빨간불을 인식해 ‘빨간불 — 정지’를 안내하는 신호등 인식 화면" loading="lazy"><figcaption>⑤ 신호등 색 인식</figcaption></figure>
+          <figure><img src="images/01_voice_navigation.png" alt="보행 경로를 음성으로 안내하는 화면" data-i18n-alt="shot1.alt" loading="lazy"><figcaption data-i18n="shot1.cap">① 음성 길 안내</figcaption></figure>
+          <figure><img src="images/02_traffic_signal.png" alt="카메라로 보행 신호등 색을 인식해 안내하는 화면" data-i18n-alt="shot2.alt" loading="lazy"><figcaption data-i18n="shot2.cap">② 신호등 인식</figcaption></figure>
+          <figure><img src="images/03_voice_search.png" alt="목적지를 음성으로 검색하는 화면" data-i18n-alt="shot3.alt" loading="lazy"><figcaption data-i18n="shot3.cap">③ 음성 목적지 검색</figcaption></figure>
+          <figure><img src="images/04_nearby_places.png" alt="가까운 후보 장소 목록에서 목적지를 고르는 화면" data-i18n-alt="shot4.alt" loading="lazy"><figcaption data-i18n="shot4.cap">④ 주변 장소 선택</figcaption></figure>
+          <figure><img src="images/05_distance_overview.png" alt="목적지와 다음 횡단보도까지 남은 거리를 보여 주는 화면" data-i18n-alt="shot5.alt" loading="lazy"><figcaption data-i18n="shot5.cap">⑤ 남은 거리 안내</figcaption></figure>
         </div>
       </div>
     </section>
@@ -215,13 +224,13 @@
   <div class="band band--deep">
     <section id="demo" data-reveal>
       <div class="wrap">
-        <h2>실제로 어떻게 동작하나요</h2>
+        <h2 data-i18n="demo.h">실제로 어떻게 동작하나요</h2>
         <div class="video">
-          <iframe src="https://www.youtube.com/embed/lw8KNV8uX44" title="SafeWalk 시연 영상"
+          <iframe src="https://www.youtube.com/embed/lw8KNV8uX44" title="SafeWalk 시연 영상" data-i18n-title="demo.title"
             referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p class="video-alt">영상이 보이지 않으면 <a href="https://youtu.be/lw8KNV8uX44">유튜브에서 시연 영상 보기</a></p>
+        <p class="video-alt" data-i18n="demo.alt">영상이 보이지 않으면 <a href="https://youtu.be/lw8KNV8uX44">유튜브에서 시연 영상 보기</a></p>
       </div>
     </section>
   </div>
@@ -229,19 +238,19 @@
   <div class="band">
     <section id="status" data-reveal>
       <div class="wrap">
-        <h2>개발 현황</h2>
-        <p>현재 베타 버전으로 실제 시각장애인 사용자와 함께 테스트하고 있습니다. iOS 버전은 2026년 10월 출시를 준비하고 있습니다.</p>
-        <p>아래 버튼으로 베타 테스트에 참여하실 수 있습니다.</p>
+        <h2 data-i18n="status.h">개발 현황</h2>
+        <p data-i18n="status.p1">현재 베타 버전으로 실제 시각장애인 사용자와 함께 테스트하고 있습니다. iOS 버전은 2026년 10월 출시를 준비하고 있습니다.</p>
+        <p data-i18n="status.p2">아래 버튼으로 베타 테스트에 참여하실 수 있습니다.</p>
         <!-- TODO: 아래 href 를 실제 TestFlight 공개 링크로 교체 (예: https://testflight.apple.com/join/xxxxxxxx). Beta App Review 승인 후 공개. -->
-        <p><a class="cta" href="https://testflight.apple.com/join/XXXXXXXX">베타 신청하기 (TestFlight)</a></p>
+        <p><a class="cta" href="https://testflight.apple.com/join/XXXXXXXX" data-i18n="cta">베타 신청하기 (TestFlight)</a></p>
       </div>
     </section>
     <section id="notice" data-reveal>
       <div class="wrap">
         <div class="notice">
-          <h2>안전 고지</h2>
-          <p>SafeWalk는 보행을 돕는 <strong>보조 도구</strong>이며, 흰지팡이와 안내견을 대체하지 않습니다.</p>
-          <p>앱의 안내가 항상 정확하지는 않으며, 최종 판단은 언제나 사용자에게 있습니다.</p>
+          <h2 data-i18n="notice.h">안전 고지</h2>
+          <p data-i18n="notice.p1">SafeWalk는 보행을 돕는 <strong>보조 도구</strong>이며, 흰지팡이와 안내견을 대체하지 않습니다.</p>
+          <p data-i18n="notice.p2">앱의 안내가 항상 정확하지는 않으며, 최종 판단은 언제나 사용자에게 있습니다.</p>
         </div>
       </div>
     </section>
@@ -250,26 +259,26 @@
   <div class="band band--tint">
     <section id="team" data-reveal>
       <div class="wrap">
-        <h2>만든 사람들</h2>
+        <h2 data-i18n="team.h">만든 사람들</h2>
         <ul class="team">
-          <li><span class="name">이도윤</span><span class="role">팀장, 프로젝트 총괄 및 유지보수</span></li>
-          <li><span class="name">김민성</span><span class="role">프로그램 개발 및 유지보수</span></li>
-          <li><span class="name">김수영</span><span class="role">프로그램 개발 및 인터뷰</span></li>
-          <li><span class="name">이지민</span><span class="role">iOS 앱 전체 개발 · 홈페이지 관리</span></li>
+          <li><span class="name" data-i18n="n1">이도윤</span><span class="role" data-i18n="r1">팀장, 프로젝트 총괄 및 유지보수</span></li>
+          <li><span class="name" data-i18n="n2">김민성</span><span class="role" data-i18n="r2">프로그램 개발 및 유지보수</span></li>
+          <li><span class="name" data-i18n="n3">김수영</span><span class="role" data-i18n="r3">프로그램 개발 및 인터뷰</span></li>
+          <li><span class="name" data-i18n="n4">이지민</span><span class="role" data-i18n="r4">iOS 앱 전체 개발 · 홈페이지 관리</span></li>
         </ul>
       </div>
     </section>
     <section id="support" data-reveal>
       <div class="wrap">
         <div class="support">
-          <p>이 프로젝트는 <strong>서울미래인재재단 서울임팩트프로젝트</strong>에 선정되어 지원받고 있습니다.</p>
+          <p data-i18n="support">이 프로젝트는 <strong>서울미래인재재단 서울임팩트프로젝트</strong>에 선정되어 지원받고 있습니다.</p>
         </div>
       </div>
     </section>
     <section id="contact" data-reveal>
       <div class="wrap">
-        <h2>함께 만들어가고 있습니다</h2>
-        <p>SafeWalk는 실제 시각장애인 사용자의 의견을 반영해 만들고 있습니다. 앱에 대한 의견을 들려주실 분, 베타 테스트 참여를 문의하실 분은 이메일로 연락 주세요.</p>
+        <h2 data-i18n="contact.h">함께 만들어가고 있습니다</h2>
+        <p data-i18n="contact.p">SafeWalk는 실제 시각장애인 사용자의 의견을 반영해 만들고 있습니다. 앱에 대한 의견을 들려주실 분, 베타 테스트 참여를 문의하실 분은 이메일로 연락 주세요.</p>
         <a class="contact-mail" href="mailto:safewalkseoul@gmail.com">safewalkseoul@gmail.com</a>
       </div>
     </section>
@@ -282,13 +291,140 @@
 <footer class="band band--deep">
   <div class="wrap">
     <ul class="footer-links">
-      <li><a href="https://github.com/monggu03/SafeWalkNav">GitHub 저장소</a></li>
-      <li><a href="privacy.html">개인정보처리방침</a></li>
-      <li><a href="mailto:safewalkseoul@gmail.com">이메일 문의</a></li>
+      <li><a href="https://github.com/monggu03/SafeWalkNav" data-i18n="ft.gh">GitHub 저장소</a></li>
+      <li><a href="privacy.html" data-i18n="ft.privacy">개인정보처리방침</a></li>
+      <li><a href="mailto:safewalkseoul@gmail.com" data-i18n="ft.mail">이메일 문의</a></li>
     </ul>
-    <p>SafeWalk · 동국대학교 컴퓨터공학과 공개SW프로젝트</p>
+    <p data-i18n="ft.p">SafeWalk · 동국대학교 컴퓨터공학과 공개SW프로젝트</p>
   </div>
 </footer>
+
+<script>
+/* ---------- 한국어 / English 전환 ----------
+   한국어 원문은 HTML 에 그대로 두고, 영어 문구만 아래 EN 에 둡니다.
+   문구를 고칠 때: 한국어는 본문 HTML, 영어는 EN 의 같은 key 를 수정하세요. */
+(function () {
+  var EN = {
+    "meta.title": "SafeWalk — Walking navigation for blind and low-vision pedestrians",
+    "meta.desc": "SafeWalk helps blind and low-vision people cross the street using only a smartphone: voice destination input, spoken walking directions, and pedestrian signal recognition.",
+    "skip": "Skip to main content",
+    "eyebrow": "DONGGUK UNIVERSITY · OPEN SOURCE SW PROJECT",
+    "lead": "A walking navigation app that helps blind and low-vision people cross the street with nothing but their smartphone.",
+    "voiceLabel": "WHAT THE APP SAYS TO THE USER",
+    "voice1": "“1,471 meters to your destination. 3 crosswalks.”",
+    "voice2": "“The light is red. Please stop.”",
+    "problem.h": "Walking alone",
+    "problem.p1": "About 247,000 people in Korea are registered as visually impaired. When they head out alone, they run into two main problems.",
+    "stat1.label": "of visually impaired people who walk alone get lost at least once a week",
+    "stat1.p": "Finding the way back to the route after getting lost is especially hard.",
+    "stat2.label": "of surveyed public facilities had no accessible (audible) pedestrian signal",
+    "stat2.p": "At a crosswalk without an audible signal, people have to cross without knowing when the light changes.",
+    "problem.p2": "Existing services offer either scene description or route guidance, but not both. SafeWalk aims to do both in a single app, with no extra hardware — just the smartphone people already own.",
+    "sources.h": "SOURCES",
+    "src1": "Registered disability statistics — Ministry of Health and Welfare (Korea), press release on 2024 registered persons with disabilities: 2.631 million, 5.1% of the population (2025)",
+    "src2": "Getting lost — Y. Jang and J. Cha, “A Study on a Route Guidance Service System for the Visually Impaired,” <span lang=\"ko\">재활복지공학회논문지</span> 11(4), 2017 (in Korean)",
+    "src3": "Audible signal installation — Korea Blind Union, pedestrian accessibility survey of 337 facilities including city, provincial and district offices nationwide (2023)",
+    "sol.h": "What the app does",
+    "f1.h": "Set a destination by voice",
+    "f1.p": "Choose where to go by speaking, without looking at the screen.",
+    "f2.h": "Spoken walking directions",
+    "f2.p": "Tells you which way to go and how far is left, and corrects you right away if you leave the route.",
+    "f3.h": "Traffic signal recognition",
+    "f3.p": "Finds the pedestrian signal with the camera and announces its color, and tells you which way to point the camera.",
+    "shots.h": "App preview",
+    "toggle.pause": "Pause",
+    "toggle.play": "Play",
+    "shots.p": "Say your destination and the app guides you along the route; at crosswalks it reads the signal color aloud.",
+    "shot1.alt": "Screen giving spoken walking directions along the route",
+    "shot1.cap": "① Voice navigation",
+    "shot2.alt": "Screen recognizing the pedestrian signal color with the camera",
+    "shot2.cap": "② Traffic signal recognition",
+    "shot3.alt": "Screen for searching a destination by voice",
+    "shot3.cap": "③ Voice search",
+    "shot4.alt": "Screen for picking a destination from a list of nearby candidate places",
+    "shot4.cap": "④ Nearby places",
+    "shot5.alt": "Screen showing the remaining distance to the destination and to the next crosswalk",
+    "shot5.cap": "⑤ Distance overview",
+    "demo.h": "See it in action",
+    "demo.title": "SafeWalk demo video (in Korean)",
+    "demo.alt": "If the video does not load, <a href=\"https://youtu.be/lw8KNV8uX44\">watch the demo on YouTube</a> (in Korean).",
+    "status.h": "Development status",
+    "status.p1": "SafeWalk is currently in beta and is being tested together with blind and low-vision users. The iOS version is planned for release in October 2026.",
+    "status.p2": "You can join the beta test with the button below.",
+    "cta": "Join the beta (TestFlight)",
+    "notice.h": "Safety notice",
+    "notice.p1": "SafeWalk is an <strong>assistive aid</strong> for walking. It does not replace a white cane or a guide dog.",
+    "notice.p2": "The app's guidance is not always accurate, and the final decision always rests with the user.",
+    "team.h": "Team",
+    "n1": "Doyun Lee", "r1": "Team lead · project management and maintenance",
+    "n2": "Minseong Kim", "r2": "Development and maintenance",
+    "n3": "Suyeong Kim", "r3": "Development and user interviews",
+    "n4": "Jimin Lee", "r4": "iOS app development · website",
+    "support": "This project was selected for and is supported by the <strong>Seoul Impact Project</strong> of the Seoul Future Talent Foundation (<span lang=\"ko\">서울미래인재재단</span>).",
+    "contact.h": "Built together with users",
+    "contact.p": "SafeWalk is shaped by feedback from blind and low-vision users. If you would like to share your thoughts on the app or ask about joining the beta test, please email us.",
+    "ft.gh": "GitHub repository",
+    "ft.privacy": "Privacy policy (Korean)",
+    "ft.mail": "Email us",
+    "ft.p": "SafeWalk · Dongguk University, Dept. of Computer Science and Engineering · Open Source SW Project"
+  };
+  var KO = { "toggle.pause": "일시정지", "toggle.play": "재생" };
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var alts = document.querySelectorAll("[data-i18n-alt]");
+  var titles = document.querySelectorAll("[data-i18n-title]");
+  var desc = document.querySelector('meta[name="description"]');
+  var btn = document.querySelector("[data-lang-toggle]");
+  var i;
+  // 한국어 원문을 DOM 에서 기억해 둠
+  for (i = 0; i < nodes.length; i++) { var k = nodes[i].getAttribute("data-i18n"); if (!(k in KO)) KO[k] = nodes[i].innerHTML; }
+  for (i = 0; i < alts.length; i++) KO[alts[i].getAttribute("data-i18n-alt")] = alts[i].getAttribute("alt");
+  for (i = 0; i < titles.length; i++) KO[titles[i].getAttribute("data-i18n-title")] = titles[i].getAttribute("title");
+  KO["meta.title"] = document.title;
+  KO["meta.desc"] = desc ? desc.getAttribute("content") : "";
+
+  var current = "ko";
+  function t(key) { var d = current === "en" ? EN : KO; return (key in d) ? d[key] : KO[key]; }
+  window.safewalkT = t;
+
+  function apply(lang) {
+    current = lang === "en" ? "en" : "ko";
+    document.documentElement.lang = current;
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i], key = el.getAttribute("data-i18n");
+      if (el.hasAttribute("data-shots-toggle")) key = el.getAttribute("aria-pressed") === "true" ? "toggle.play" : "toggle.pause";
+      el.innerHTML = t(key);
+    }
+    for (i = 0; i < alts.length; i++) alts[i].setAttribute("alt", t(alts[i].getAttribute("data-i18n-alt")));
+    for (i = 0; i < titles.length; i++) titles[i].setAttribute("title", t(titles[i].getAttribute("data-i18n-title")));
+    document.title = t("meta.title");
+    if (desc) desc.setAttribute("content", t("meta.desc"));
+    if (btn) {
+      // 버튼에는 '바꿀 언어'를 그 언어로 표기 (스크린리더가 올바른 발음으로 읽도록 lang 지정)
+      btn.textContent = current === "en" ? "한국어" : "English";
+      btn.setAttribute("lang", current === "en" ? "ko" : "en");
+    }
+  }
+
+  // 우선순위: URL ?lang=en|ko  >  이전에 고른 언어  >  브라우저 언어
+  var initial = null;
+  var m = /[?&]lang=(en|ko)\b/.exec(location.search);
+  if (m) initial = m[1];
+  if (!initial) { try { initial = localStorage.getItem("safewalk-lang"); } catch (e) {} }
+  if (initial !== "en" && initial !== "ko") {
+    var nav = (navigator.language || "ko").toLowerCase();
+    initial = nav.indexOf("ko") === 0 ? "ko" : "en";
+  }
+  if (btn) {
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var next = current === "en" ? "ko" : "en";
+      apply(next);
+      try { localStorage.setItem("safewalk-lang", next); } catch (e) {}
+    });
+  }
+  apply(initial);
+})();
+</script>
 
 <script>
 (function () {
@@ -331,7 +467,7 @@
     btn.addEventListener("click", function () {
       userPaused = !userPaused;
       btn.setAttribute("aria-pressed", userPaused ? "true" : "false");
-      btn.textContent = userPaused ? "재생" : "일시정지";
+      btn.textContent = window.safewalkT ? window.safewalkT(userPaused ? "toggle.play" : "toggle.pause") : (userPaused ? "재생" : "일시정지");
     });
   }
   window.addEventListener("resize", updateToggle);
